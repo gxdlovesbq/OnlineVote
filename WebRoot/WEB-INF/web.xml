@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="2.5" 
+	xmlns="http://java.sun.com/xml/ns/javaee" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee 
+	http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>DealServlet</servlet-name>
+    <servlet-class>com.sxt.servlet.DealServlet</servlet-class>
+  </servlet>
+   <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>ConstructorServlet</servlet-name>
+    <servlet-class>com.sxt.servlet.ConstructorServlet</servlet-class>
+  </servlet>
+
+
+  <filter>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <filter-name>ManagerFilter</filter-name>
+    <filter-class>com.sxt.filter.ManagerFilter</filter-class>
+  </filter>
+
+  <filter>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <filter-name>ViewFilter</filter-name>
+    <filter-class>com.sxt.filter.ViewFilter</filter-class>
+  </filter>
+
+  <filter>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <filter-name>LoginFilter</filter-name>
+    <filter-class>com.sxt.filter.LoginFilter</filter-class>
+  </filter>
+  <servlet>
+    <servlet-name>DwrServlet</servlet-name>
+    <servlet-class>org.directwebremoting.servlet.DwrServlet</servlet-class>
+    <init-param>
+        <param-name>debug</param-name>
+        <param-value>true</param-value>
+    </init-param>
+    
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>DwrServlet</servlet-name>
+    <url-pattern>/dwr/*</url-pattern>
+  </servlet-mapping>
+
+  <servlet-mapping>
+    <servlet-name>DealServlet</servlet-name>
+    <url-pattern>/DealServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>ConstructorServlet</servlet-name>
+    <url-pattern>/ConstructorServlet</url-pattern>
+  </servlet-mapping>
+
+ <filter-mapping>
+    <filter-name>ViewFilter</filter-name>
+    <url-pattern>/index.jsp</url-pattern>
+  </filter-mapping>
+  <filter-mapping>
+    <filter-name>LoginFilter</filter-name>
+    <url-pattern>*.jsp</url-pattern>
+  </filter-mapping>
+ 
+  <filter-mapping>
+    <filter-name>ManagerFilter</filter-name>
+    <url-pattern>/add.jsp</url-pattern>
+  </filter-mapping>
+</web-app>
